@@ -1,0 +1,101 @@
+# ==============================================
+# Magento 2 .gitignore
+# ==============================================
+
+# ---- SECRETS (never commit these) ----
+app/etc/env.php
+app/etc/config.local.php
+auth.json
+.env
+.env.*
+*.pem
+*.key
+*.p12
+
+# ---- Composer dependencies (restored with `composer install`) ----
+/vendor/
+
+# ---- Generated code and static files (rebuilt on deploy) ----
+/generated/*
+!/generated/.htaccess
+/pub/static/*
+!/pub/static/.htaccess
+/var/*
+!/var/.htaccess
+
+# ---- Media uploads (product images, customer files) ----
+/pub/media/*
+!/pub/media/.htaccess
+!/pub/media/customer/.htaccess
+!/pub/media/downloadable/.htaccess
+!/pub/media/import/.htaccess
+!/pub/media/theme_customization/.htaccess
+!/pub/media/custom_options/.htaccess
+!/pub/media/customer_address/.htaccess
+!/pub/media/sitemap/.htaccess
+!/pub/media/theme/.htaccess
+
+# ---- Node / frontend tooling ----
+node_modules/
+package.json
+package-lock.json
+Gruntfile.js
+grunt-config.json
+npm-debug.log
+yarn-error.log
+
+# ---- Magento sample/dev leftovers ----
+/dev/tests/*/tmp/
+/dev/tests/*/etc/install-config-mysql.php
+/dev/tests/*/etc/*.local.*
+/dev/tests/integration/tmp/
+/dev/tests/api-functional/etc/install-config-mysql.php
+/dev/tests/acceptance/.env
+/dev/tests/acceptance/tests/_output/
+/dev/tests/acceptance/.credentials
+/dev/tests/acceptance/.htaccess
+/update/
+/phpserver/
+
+# ---- Database dumps and backups ----
+*.sql
+*.sql.gz
+*.sql.zip
+*.dump
+*.bak
+*.tar
+*.tar.gz
+*.zip
+
+# ---- Logs ----
+*.log
+/var/log/
+
+# ---- PHP tooling ----
+.php-cs-fixer.cache
+.phpunit.result.cache
+.phpcs-cache
+phpunit.xml
+phpunit.xml.dist.local
+
+# ---- Custom code stays tracked: app/code and app/design are NOT ignored ----
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- IDE / editor ----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+nbproject/
+*.sublime-project
+*.sublime-workspace
+
+# ---- Claude Code local settings ----
+.claude/settings.local.json
